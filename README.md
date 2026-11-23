@@ -4,11 +4,15 @@ Annual US data from 1872 to 2025 and a small Python script that reproduce the nu
 [investwealth.com/tools/safe-withdrawal-rate](https://www.investwealth.com/tools/safe-withdrawal-rate) and
 [investwealth.com/tools/how-long-will-my-money-last](https://www.investwealth.com/tools/how-long-will-my-money-last):
 
-- At a 4% first-year withdrawal, raised with inflation every year, a 60/40 portfolio lasted 30 years in **124 of 125** retirement starts since 1872. The one failure started in 1966.
-- The highest rate that survived **every** 30-year start was **3.9%** with 60% stocks (4.0% with 80%); for 40 years about 3.6%; the cautious 20/80 mix fell to 2.7% over 40 years and 2.3% over 50.
+- At a 4% first-year withdrawal, raised with inflation every year, a 60/40 portfolio lasted 30 years in **121 of 125** retirement starts since 1872. The four failures started in 1965, 1966, 1968 and 1969.
+- The highest rate that survived **every** 30-year start was **3.8%** with 60% stocks (3.8% with 80%); for 40 years about 3.5%; the cautious 20/80 mix fell to 2.7% over 40 years and 2.3% over 50.
 - The eight worst 30-year start years all lie between 1962 and 1973, when bonds stopped cushioning stocks; the best (for example 1921 and 1982) supported 9–10%.
 
 Backtested results are hypothetical. Educational research, not investment advice.
+
+## Correction, 23 November 2026
+
+The US stock return for 1970 was wrong in the first version of this file: +11.59% instead of **+3.99%**. The value had been built from index data that began at the end of January 1970, so it left out that January (the index fell 7.4% in the month). With the corrected value, 121 of 125 retirements lasted 30 years at 4% (before: 124), and the highest rate that survived every 30-year start with 60% stocks is 3.8% (before: 3.9%). All figures and the sample output below use the corrected data.
 
 ## Data
 
@@ -36,16 +40,16 @@ optional yearly cost in percent.
 Sample output (defaults):
 
 ```
-4.00% withdrawal, 60/40, 30 years, costs 0.00%: 124 of 125 retirement starts (1872–1996) survived
-  failures: 1966 (ran out in year 29)
-  highest rate that survived every start: 3.91%
+4.00% withdrawal, 60/40, 30 years, costs 0.00%: 121 of 125 retirement starts (1872–1996) survived
+  failures: 1965 (ran out in year 29), 1966 (ran out in year 27), 1968 (ran out in year 30), 1969 (ran out in year 28)
+  highest rate that survived every start: 3.79%
 
 Safe maximum withdrawal rate by mix and horizon (survived every start since 1872):
   stocks/bonds   20y    30y    40y    50y
-  100/0        4.5%   3.9%   3.7%   3.6%
-   80/20       4.7%   4.0%   3.8%   3.6%
-   60/40       4.8%   3.9%   3.6%   3.5%
-   40/60       4.7%   3.8%   3.5%   3.1%
+  100/0        4.3%   3.7%   3.5%   3.4%
+   80/20       4.5%   3.8%   3.6%   3.4%
+   60/40       4.6%   3.8%   3.5%   3.4%
+   40/60       4.6%   3.7%   3.4%   3.1%
    20/80       4.5%   3.4%   2.7%   2.3%
 ```
 
